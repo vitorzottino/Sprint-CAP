@@ -1,3 +1,5 @@
+package testes;
+
 import java.time.LocalDate;
 import java.util.Random;
 import java.util.Scanner;
@@ -5,13 +7,12 @@ import java.util.Scanner;
 import entidades.Feedbacks;
 import listas.ListaAsc;
 
-public class App {
+public class TesteFila {
     public static void main(String[] args) throws Exception {
-       
+
         Scanner input = new Scanner(System.in);
         ListaAsc fbList = new ListaAsc();
         Random r = new Random();
-        
 
         int opcao = 0;
 
@@ -24,14 +25,14 @@ public class App {
             switch (opcao) {
                 case 1:
                     Feedbacks newFeedback = new Feedbacks();
-                   
+
                     System.out.print("Informe o ANO: ");
                     int y = input.nextInt();
                     System.out.println("Informe o mes (1-12): ");
-                    int m = input.nextInt();  // 1-12 for January-December.
+                    int m = input.nextInt(); // 1-12 for January-December.
                     System.out.println("Informe o dia (1-31): ");
                     int d = input.nextInt();
-                    LocalDate ld = LocalDate.of( y , m , d );
+                    LocalDate ld = LocalDate.of(y, m, d);
                     newFeedback.setDataEntrada(ld);
                     newFeedback.setId(r.nextInt(1, 101));
                     fbList.add(newFeedback);
@@ -39,7 +40,7 @@ public class App {
                     break;
 
                 case 2:
-                    
+
                     fbList.show();
 
                     break;
